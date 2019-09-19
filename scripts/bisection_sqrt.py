@@ -1,0 +1,27 @@
+# Do Binary Search for floor(sqrt(x)) 
+start = 1
+end = x
+ans = 0  # initialize answer
+while (start <= end) : 
+    # Base cases (b)
+    if (x == 0 or x == 1) : 
+        ans = x
+        break
+        
+    mid = (start + end) // 2
+
+    # If x is a perfect square 
+    if (mid*mid == x) : 
+        ans = mid
+        break 
+
+    # Since we need floor, we update  
+    # answer when mid*mid is smaller 
+    # than x, and move closer to sqrt(x) 
+    if (mid * mid < x) : 
+        start = mid + 1
+        ans = mid 
+
+    else : 
+        # If mid*mid is greater than x 
+        end = mid-1
