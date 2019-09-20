@@ -1,7 +1,6 @@
-# bisection_sqrt.py
+# bisection_sqrt_ans.py (PART C)
 
 import math
-# Use input
 what = input('Enter an integer: ')
 x = int(what)
 
@@ -10,7 +9,7 @@ start = 1
 end = x
 ans = 0
 while (start <= end) : 
-    # Base cases (b)
+    # Base cases
     if (x == 0 or x == 1) : 
         ans = x
         break
@@ -33,9 +32,9 @@ while (start <= end) :
         # If mid*mid is greater than x 
         end = mid-1
 
+# MODIFIED CODE in this block
 if ans**2 == x:
     print(f"The exact square root of {x} is {ans}")
 else:
     print(f"The approximate square root of {x} is {ans} and the exact value is  {math.sqrt(x)}")
     print (f'The error is {((math.sqrt(x)-ans)/math.sqrt(x))*100:.2f}%')
-

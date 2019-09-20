@@ -1,3 +1,4 @@
+# (PART D)
 """
 Program: bisection_sqrt_list.py
 This program uses a binary search algorithm to calculate the square root
@@ -11,12 +12,12 @@ Reference:  https://www.wikiwand.com/en/Binary_search_algorithm.
 
 import math
 
+# NEW CODE: define the given list...
+input_list = [12, 100, 234, 123123123, 28397236511599]
 
-input_str = input('Enter list of numbers:')
-input_list = input_str.split()
-numbers = [ int(x) for x in input_list ]
-
-for x in input_listnumbers:
+# ... and loop over list items
+for x in input_list:
+    # Note that indentation is important !!!
     # Do Binary Search for floor(sqrt(x)) 
     start = 1
     end = x
@@ -45,8 +46,10 @@ for x in input_listnumbers:
             # If mid*mid is greater than x 
             end = mid-1
 
+    # Note that indentation is important !!!
     if ans**2 == x:
         print(f"The exact square root of {x} is {ans}\n")
     else:
         print(f"The approximate square root of {x} is {ans} and the exact value is  {math.sqrt(x)}")
-        print (f'The error is {((math.sqrt(x)-ans)/math.sqrt(x))*100:.2f}%\n')
+        print (f'The error is {((math.sqrt(x)-ans)/math.sqrt(x))*100:.5f}%\n')
+
